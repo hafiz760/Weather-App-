@@ -1,0 +1,51 @@
+﻿@model WeatherWebApp.Models.SearchByCity
+
+@{
+    ViewData["Title"] = "SearchByCity";
+}
+
+
+<div class="container">
+
+    <h2>Your Weather Result</h2>
+
+    <form method="post" asp-action="SearchByCity">
+  <div class="mb-3">
+    <label asp-for="CityName" class="form-label"></label>
+    <input type="text" asp-for="CityName">
+  </div>
+  <button type="submit" class="btn btn-primary">Get Weather</button>
+</form>
+
+</div>
+
+<p class="bg-danger" id="lat" ></p>
+<p class="bg-info" id="lat" ></p>
+
+
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+var lat = document.getElementById("lat");
+var lan = document.getElementById("lan");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }  
+}
+
+function showPosition(position) {
+  lat.innerHTML = "Latitude: " + position.coords.latitude + 
+ 
+  lan.innerHTML = "Longitude: " + position.coords.longitude;
+}
+</script>

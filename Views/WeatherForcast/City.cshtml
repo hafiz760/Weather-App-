@@ -1,0 +1,26 @@
+﻿@model WeatherWebApp.Models.City
+
+@{
+    ViewData["Title"] = "City";
+}
+
+
+<div class="container">
+
+    <h2>Your Weather Result</h2>
+
+    <label asp-for="Name"></label>
+    <span class="badge alert-primary">@Model.Name</span><br /> 
+    <label asp-for="Temprature"></label>
+    <span class="badge alert-primary">@Model.Temprature &#8451;</span><br />
+           <label asp-for="Weather"></label>
+    <span class="badge alert-primary">@Model.Weather</span><br />
+           <label asp-for="Humidity"></label>
+    <span class="badge alert-primary">@Model.Humidity</span><br />
+           <label asp-for="Wind"></label>
+    <span class="badge alert-primary">@Model.Wind</span><br />
+           <label asp-for="Pressure"></label>
+    <span class="badge alert-primary">@Model.Pressure</span><br />
+
+
+</div>
